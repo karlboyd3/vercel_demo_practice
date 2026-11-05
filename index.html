@@ -3,17 +3,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Coming soon</title>
-  <style>
-    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #f4f1ec; font-family: system-ui, "Segoe UI", Arial, sans-serif; color: #1b1b1b; text-align: center; }
-    h1 { font-size: 72px; margin: 0 0 12px; }
-    p { font-size: 32px; margin: 0; }
-  </style>
+  <title>Global Health Dashboard</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div>
-    <h1>Coming soon</h1>
-    <p>The dashboard is not live yet.</p>
-  </div>
+  <header>
+    <h1 id="title">Global Health Dashboard</h1>
+    <p id="subtitle">Life expectancy and family size in 5 countries, 1955 to 2005</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Life expectancy over time (years)</h2>
+      <div class="chart-box"><canvas id="lineChart"></canvas></div>
+    </section>
+
+    <section class="card">
+      <h2>Babies per woman: 1955 vs 2005</h2>
+      <div class="chart-box"><canvas id="barChart"></canvas></div>
+    </section>
+  </main>
+
+  <p id="error" class="error" hidden></p>
+  <footer>Data: Gapminder (public dataset), saved in this repo as data/life-expectancy.csv</footer>
+
+  <script src="vendor/chart.umd.min.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
